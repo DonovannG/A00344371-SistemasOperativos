@@ -1,0 +1,15 @@
+// (2). --------- a.c file: gcc -o a a.c ----------
+#include <unistd.h>
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+
+{
+
+printf("THIS IS %d IN %s\n", getpid(), argv[0]);
+
+int r = execl("b", "b", "hi", NULL);
+
+printf("SEE THIS LINE ONLY IF execl() FAILED\n");
+
+}
